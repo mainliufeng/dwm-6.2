@@ -67,6 +67,7 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *roficmd[] = {"rofi", "-combi-modi", "window,drun,ssh", "-show", "combi", "-modi", "combi", "-theme", "solarized", "-font", "hack 38"};
 static const char *alsamixercmd[] = {"terminal", "-e", "alsamixer"};
+static const char *slockcmd[] = {"slock", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -75,6 +76,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_minus,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = alsamixercmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
