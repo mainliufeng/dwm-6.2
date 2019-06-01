@@ -67,6 +67,7 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 static const char *roficmd[] = {"rofi", "-combi-modi", "window,drun,ssh", "-show", "combi", "-modi", "combi", "-theme", "solarized", "-font", "hack 38"};
 static const char *alsamixercmd[] = {"terminal", "-e", "alsamixer"};
 static const char *slockcmd[] = {"slock", NULL};
+static const char *printscreenncmd[] = {"flameshot", "gui", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -115,6 +116,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+    { 0,                            XK_Print,  spawn,          {.v = printscreenncmd } },
 };
 
 /* button definitions */
